@@ -1,17 +1,41 @@
 
+//Week 3 Homework
+const pizzaToppings = ["Kalua Pig", "Teri Sauce", "Green Onions", "Chicken Lau Lau"];
 
-// Homework
-//Creat array of pizza toppings with 4 different toppings
-const pizzaToppings = [ "Kalua Pig", "Teri Sauce", "Green Onions", "Chicken Lau Lau"];
+//Greet Customer
+console.log("Aloha, your toppings choices are:");
+for (let toppingsList of pizzaToppings) {
+  console.log(toppingsList);
+}
 
-//greetCustomer
-fucntion greetCustomer() {
-    console.log("Welcome to Pizza House, our toppings are:", pizzaToppings);}
+//Pizza Order
+const pizzaOrder = {
+    size: ["6 Inch", "8 Inch", "12 Inch"],
+    crust: ["Normal", "Pan"],
+    toppings: []
+  };
 
-//Creat get pizza order with size crust and toppings
-const size = ["12in", "16in", "22in"];
-const crust = ["thin", "pan", "handtossed"];
+  console.log(
+    pizzaOrder.size[1],
+    pizzaOrder.crust[0],
+    "pizza with",
+    pizzaToppings[0],
+    pizzaToppings[2],
+    "is firing up!"
+  );
 
-console.log('One', ${size[0]});
+  //Prepare
 
+  const preparePizza = {
+    size: pizzaOrder.size[1],
+    crust: pizzaOrder.crust[0],
+    toppings: [pizzaToppings[0], pizzaToppings[2]]
+  };
 
+  console.log('Cooking!');
+
+  //Serve
+const pizza = [preparePizza.size, preparePizza.crust, preparePizza.toppings];
+console.log("Wow it's ready!");
+
+console.log("Enjoy your", pizza, "Pizza!");
