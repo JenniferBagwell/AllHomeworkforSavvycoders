@@ -3,39 +3,52 @@
 const pizzaToppings = ["Kalua Pig", "Teri Sauce", "Green Onions", "Chicken Lau Lau"];
 
 //Greet Customer
-console.log("Aloha, your toppings choices are:");
-for (let toppingsList of pizzaToppings) {
-  console.log(toppingsList);
+function greetCustomer() {
+  let greeting = 'Aloha senor pizza:';
+  for (let topping of pizzaToppings) {
+    greeting += `${topping}, `;
+  }
+  console.log(greeting);
 }
+greetCustomer();
 
+function getPizzaOrder (size, crust, ...toppings) {
+  let order = `One $One ${size} ${crust} crust pizza with `;
+  order += `${toppings}, `; {
+
+  console.log(`${order}. Coming up!`);
+  return [size, crust, toppings];
+}
 //Pizza Order
-const pizzaOrder = {
-    size: ["6 Inch", "8 Inch", "12 Inch"],
-    crust: ["Normal", "Pan"],
-    toppings: []
-  };
-
-  console.log(
-    pizzaOrder.size[1],
-    pizzaOrder.crust[0],
-    "pizza with",
-    pizzaToppings[0],
-    pizzaToppings[2],
-    "is firing up!"
-  );
+let customerOrder = getPizzaOrder (
+  "large",
+  "thin",
+  "sausage",
+  "onion",
+  "peppers"
+);
+console.log(getPizzaOrder)
 
   //Prepare
 
-  const preparePizza = {
-    size: pizzaOrder.size[1],
-    crust: pizzaOrder.crust[0],
-    toppings: [pizzaToppings[0], pizzaToppings[2]]
+function preparePizza ([orderSize, orderCrust, orderToppings]) {
+  console.log(...your pizza is cooking...");
+  return {
+    size: orderSize,
+    crust: orderCrust,
+    toppings: orderToppings
   };
+}
+let cookedPizza = preparePizza(customerOrder);
 
-  console.log('Cooking!');
-
-  //Serve
-const pizza = [preparePizza.size, preparePizza.crust, preparePizza.toppings];
-console.log("Wow it's ready!");
-
-console.log("Enjoy your", pizza, "Pizza!");
+function serverPizza(pizza) {
+  let orderREad =  `Order up! Here is your ${pizza.size} ${pizza.crust} crust
+  for (let topping of pizza.toppings) {
+    orderReady += `${topping}, `;
+  }
+  console.log(`${orderREady}. Enjoy!`);
+  return pizza;
+}
+serverPizza(cookedPizza);
+`
+  }
